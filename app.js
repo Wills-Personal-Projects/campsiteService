@@ -7,9 +7,21 @@ const app = express()
 app.use(express.static("public"))
 
 // define the first route
-app.get("/", function (req, res) {
+app.get("/getCampsites", function (req, res) {
   res.send(sites["RECDATA"])
 })
+
+app.post('/', (req, res) => {
+    return res.send('Received a POST HTTP method');
+});
+   
+app.put('/', (req, res) => {
+    return res.send('Received a PUT HTTP method');
+});
+   
+app.delete('/', (req, res) => {
+    return res.send('Received a DELETE HTTP method');
+});
 
 // start the server listening for requests
 app.listen(process.env.PORT || 3000, 
