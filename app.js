@@ -1,3 +1,4 @@
+const sites = require("./Campsites_API_v1.json");
 // create an express app
 const express = require("express")
 const app = express()
@@ -7,7 +8,7 @@ app.use(express.static("public"))
 
 // define the first route
 app.get("/", function (req, res) {
-  res.send("<h1>Hello World!</h1>")
+  res.send(sites["RECDATA"])
 })
 
 // start the server listening for requests
