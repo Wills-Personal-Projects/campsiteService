@@ -1,15 +1,17 @@
 const sites = require("./Campsites_API_v1.json");
 // create an express app
-const express = require("express")
-const app = express()
+const express = require("express");
+const app = express();
+const cors = require("cors");
 
+app.use(cors());
 // use the express-static middleware
-app.use(express.static("public"))
+app.use(express.static("public"));
 
 // define the first route
 app.get("/getCampsites", function (req, res) {
-  res.send(sites["RECDATA"])
-})
+  res.send(sites["RECDATA"]);
+});
 
 app.post('/', (req, res) => {
     return res.send('Received a POST HTTP method');
