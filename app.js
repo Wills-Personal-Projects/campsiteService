@@ -1,17 +1,15 @@
-var express = require("express");
-var app = express();
-var cors = require('cors');
-app.use(cors());
+// create an express app
+const express = require("express")
+const app = express()
 
-var campsites = require("./Campsites_API_v1.json");
-let facs = campsites["RECDATA"];
+// use the express-static middleware
+app.use(express.static("public"))
 
-var port = process.env.PORT || 8080;
+// define the first route
+app.get("/", function (req, res) {
+  res.send("<h1>Hello World!</h1>")
+})
 
-app.get("/facilities", (req, res, next) => {
-    res.json(facs);
-});
-
-app.listen(port, function() {
-	console.log('Our app is running on http://localhost:' + port);
-});
+// start the server listening for requests
+app.listen(process.env.PORT || 3000, 
+	() => console.log("Server is running..."));
