@@ -14,6 +14,10 @@ app.get("/getCampsites", function (req, res) {
   res.send(sites["RECDATA"]);
 });
 
+app.get("/getUserCampsites", function (req, res) {
+    res.send(userSites["Campsites"]);
+  });
+
 app.post('/postCampsite', (req, res) => {
     userSites["Campsites"].push(req.body);
     return res.send('Received a POST HTTP method');
