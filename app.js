@@ -19,8 +19,8 @@ app.get("/getUserCampsites", function (req, res) {
   });
 
 app.post('/postCampsite', (req, res) => {
-    userSites["Campsites"].push(req);
-    return res.send("Recieved a POST method");
+    userSites["Campsites"].push("new site added");
+    return res.send(req.body);
 });
    
 app.put('/', (req, res) => {
