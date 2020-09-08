@@ -19,8 +19,8 @@ app.get("/getUserCampsites", function (req, res) {
   });
 
 app.post('/postCampsite', (req, res) => {
-    userSites["Campsites"].push("new site added");
-    return res.send(JSON.stringify(req.body));
+    userSites["Campsites"].push(req.body.campsiteName);
+    return res.send("JSON.stringify(req.body)");
 });
    
 app.put('/', (req, res) => {
