@@ -20,7 +20,7 @@ app.get("/getUserCampsites", function (req, res) {
 
 app.post('/postCampsite', (req, res) => {
     userSites["Campsites"].push("new site added");
-    return res.send(req);
+    return res.send(JSON.stringify(req.body));
 });
    
 app.put('/', (req, res) => {
