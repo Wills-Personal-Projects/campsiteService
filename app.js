@@ -1,4 +1,5 @@
 const sites = require("./Campsites_API_v1.json");
+const userSites = require("./User_Campsites.json");
 // create an express app
 const express = require("express");
 const app = express();
@@ -13,7 +14,8 @@ app.get("/getCampsites", function (req, res) {
   res.send(sites["RECDATA"]);
 });
 
-app.post('/', (req, res) => {
+app.post('/postCampsite', (req, res) => {
+    userSites["Campsites"].push(req.body);
     return res.send('Received a POST HTTP method');
 });
    
