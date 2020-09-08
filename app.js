@@ -19,7 +19,7 @@ app.get("/getUserCampsites", function (req, res) {
   });
 
 app.post('/postCampsite', (req, res) => {
-    userSites["Campsites"].push("new site added");
+    userSites["Campsites"].push(req.body);
     return res.send('Received a POST HTTP method');
 });
    
