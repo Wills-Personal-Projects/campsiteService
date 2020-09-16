@@ -1,5 +1,6 @@
 const sites = require("./Campsites_API_v1.json");
 const userSites = require("./User_Campsites.json");
+const currentFacID = require("./currentFacID.json");
 // create an express app
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -36,6 +37,10 @@ app.delete('/deleteUserCampsites', (req, res) => {
     userSites["Campsites"].splice(0,userSites["Campsites"].length)
     return res.send('Received a DELETE HTTP method');
 });
+
+app.get('/getNewFacID', (req, res) => {
+  return res.send(currentFacID);
+})
 
 // start the server listening for requests
 app.listen(process.env.PORT || 3000, 
