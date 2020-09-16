@@ -1,6 +1,6 @@
 const sites = require("./Campsites_API_v1.json");
 const userSites = require("./User_Campsites.json");
-const currentFacID = require("./currentFacID.json");
+const FacIDObj = require("./currentFacID.json");
 // create an express app
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -39,6 +39,7 @@ app.delete('/deleteUserCampsites', (req, res) => {
 });
 
 app.get('/getNewFacID', (req, res) => {
+  FacIDObj.currentFacID = (parseInt(FacIDObj.currentFacID)+1).toString();
   return res.send(currentFacID);
 })
 
