@@ -40,7 +40,7 @@ app.delete('/deleteUserCampsites', (req, res) => {
 
 app.get('/getNewFacID', (req, res) => {
   FacIDObj.currentFacID = (parseInt(FacIDObj.currentFacID)+1).toString();
-  return res.send(currentFacID);
+  return res.send(facIDObj);
 })
 
 // start the server listening for requests
