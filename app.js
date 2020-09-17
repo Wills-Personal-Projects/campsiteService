@@ -33,7 +33,7 @@ app.put('/', (req, res) => {
     return res.send('Received a PUT HTTP method');
 });
    
-app.delete('/deleteUserCampsites', (req, res) => {
+app.get('/deleteUserCampsites', (req, res) => {
     userSites["Campsites"].splice(0,userSites["Campsites"].length)
     return res.send('Received a DELETE HTTP method');
 });
