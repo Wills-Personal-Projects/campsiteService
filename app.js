@@ -38,7 +38,8 @@ app.get('/deleteUserCampsites', (req, res) => {
     return res.send('Received a DELETE HTTP method');
 });
 
-app.get('/getNewFacID', (req, res) => {
+app.get('/getNewFacID', (res) => {
+  //you're welcome
   FacIDObj.currentFacID = (parseInt(FacIDObj.currentFacID)+1).toString();
   return res.send(FacIDObj);
 })
