@@ -26,22 +26,22 @@ app.get("/getUserCampsites", function (req, res) {
 
 app.post('/postCampsite', (req, res) => {
     userSites["Campsites"].push(req.body);
-    return res.send("JSON.stringify(req.body)");
+    res.send("JSON.stringify(req.body)");
 });
    
 app.put('/', (req, res) => {
-    return res.send('Received a PUT HTTP method');
+    res.send('Received a PUT HTTP method');
 });
    
 app.get('/deleteUserCampsites', (req, res) => {
     userSites["Campsites"].splice(0,userSites["Campsites"].length)
-    return res.send('Received a DELETE HTTP method');
+    res.send('Received a DELETE HTTP method');
 });
 
-app.get('/getNewFacID', (res) => {
+app.get('/getNewFacID', (req,res) => {
   //you're welcome
   FacIDObj.currentFacID = (parseInt(FacIDObj.currentFacID)+1).toString();
-  return res.send(FacIDObj);
+  res.send(FacIDObj);
 })
 
 // start the server listening for requests
