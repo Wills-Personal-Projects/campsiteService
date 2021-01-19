@@ -29,7 +29,7 @@ app.post('/postCampsite', (req, res) => {
     res.send("JSON.stringify(req.body)");
 });
    
-app.put('/', (req, res) => {
+app.put('/', (res) => {
     res.send('Received a PUT HTTP method');
 });
    
